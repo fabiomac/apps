@@ -12,11 +12,14 @@
        </div>
     </div>    
 	   	{% for article in articles %}
-	   	<div class="well well-lg">
+	   	<div class="panel panel-default">
+	   	<div class="panel-heading">
 		     <h2>{{article.title}}</h2>
 		     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 		      <small>Written by {{article.author}} on {{article.create_date}}</small>
 			    <hr>
+		</div>
+			    <div class="panel-body">
 			    <div>
 	  	 	       {{article.body | safe}}
 	  	 	       <a href="/register" class="btn btn-default btn-lg">
@@ -27,6 +30,7 @@
   				     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 20</a>
   				   <a href="/register" class="btn btn-default btn-lg">
   				     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 15</a>
+	  	 	    </div>
 	  	 	    </div>
    		</div>
 	   	{% endfor %}  	  
