@@ -2,16 +2,17 @@
 
 {% block body %}
 	<div class="jumbotron">
+	  <div class="container">
         <h1>Self-Managing News Environment</h1>
         <p class="lead">Seja bem-vindo ao Ambiente Virtual de Notícias Autogerenciável</p>
         {% if session.logged_in == NUL %}
           <a href="/register" class="btn btn-primary btn-lg">Register</a>
           <a href="/login" class="btn btn-success btn-lg">Login</a>
         {% endif%}
-      </div>    
+       </div>
+    </div>    
 	   	{% for article in articles %}
-	   	<div class="jumbotron">
-	   	  <div class="container">
+	   	<div class="well well-lg">
 		     <h2>{{article.title}}</h2>
 		     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 		      <small>Written by {{article.author}} on {{article.create_date}}</small>
@@ -19,17 +20,14 @@
 			    <div>
 	  	 	       {{article.body | safe}}
 	  	 	       <a href="/register" class="btn btn-default btn-lg">
-  				     <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
+  				     <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 100</a>
   				   <a href="/register" class="btn btn-default btn-lg">
-  				     <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+  				     <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> 10</span></a>
   				   <a href="/register" class="btn btn-default btn-lg">
-  				     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+  				     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 20</a>
   				   <a href="/register" class="btn btn-default btn-lg">
-  				     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
-
+  				     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 15</a>
 	  	 	    </div>
-   		    </div>
    		</div>
-	   	{% endfor %}  
-	  
+	   	{% endfor %}  	  
 {% endblock %}
